@@ -12,3 +12,6 @@
 
 Codepen Account https://codepen.io/Ldach
 
+### AWS
+Server http://34.205.194.249/
+ssh -i ~/Desktop/School/Fall_2023\CS_260\CS260_Keypair.pem ubuntu@34.205.194.249
