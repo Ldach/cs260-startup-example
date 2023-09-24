@@ -19,4 +19,4 @@ I am planning on making a simplified version of Battleship with people online. A
 **WebSocket data:** The server will render notifications for when a user creates or updates their board layout
 
 ### Images
-![Mock](battleshipsketch.jpg)
+![Mock](better_battleship_sketch.jpg)
