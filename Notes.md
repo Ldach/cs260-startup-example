@@ -35,4 +35,11 @@ https://github.com/webprogramming260/.github/blob/main/profile/html/input/input.
 
 https://codepen.io/Ldach/pen/jOXKvxq
 
+MEDIA
+
+https://github.com/webprogramming260/.github/blob/main/profile/html/media/media.mdMEDIA
+
+
+https://codepen.io/Ldach/pen/MWZXqdo
+
 
