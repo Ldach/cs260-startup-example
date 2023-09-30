@@ -25,7 +25,7 @@ I am planning on making a simplified version of Battleship with people online. A
 ## HTML deliverable
 For this deliverable, I built out the structure of my application using HTML.
 
-- **HTML pages** - Three HTML pages that represent the ability to log in, play the game, and save a layout.
+- **HTML pages** - Four HTML pages that represent the ability to learn about the game, log in, play the game, and save a layout.
 - **Links** - Every page contains links to every other page
 - **Text** - =Test instructions for how to utilize the site were added
 - **Images** -  Updated the favicon image to something more fitting
