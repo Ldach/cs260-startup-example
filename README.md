@@ -20,3 +20,15 @@ I am planning on making a simplified version of Battleship with people online. A
 
 ### Images
 ![Mock](better_battleship_sketch.jpg)
+
+
+## HTML deliverable
+For this deliverable, I built out the structure of my application using HTML.
+
+- **HTML pages** - Three HTML pages that represent the ability to log in, play the game, and save a layout.
+- **Links** - Every page contains links to every other page
+- **Text** - =Test instructions for how to utilize the site were added
+- **Images** -  Updated the favicon image to something more fitting
+- **Login** - Changed login to require both username and password
+- **Database** - The layouts are represented by those stored in the database
+- **WebSocket** - The layout will be updated in realtime to any additions or updates
