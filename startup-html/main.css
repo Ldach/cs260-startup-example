@@ -11,12 +11,13 @@ body {
     flex: 0 80px;
     background-color: navy;
     color: aliceblue;
-    text-indent: 10px;
   }
-  
+
   #headername{
     margin-left: 40px;
   }
+
+  
 
   main {
     flex: 1 calc(100vh - 110px);
@@ -29,6 +30,16 @@ body {
   
   footer {
     flex: 0 30px;
+    background-color: navy;
+    color: aliceblue;
+  }
+
+  .text-reset{
+    margin-left: 20px;
+  }
+
+  #abouttext{
+    margin: 20px;
   }
   
   menu {
@@ -47,9 +58,19 @@ body {
   menu .nav-item {
     padding: 0 0.3em;
   }
+
+  .jump-link{
+    padding: 0 0.5em;
+  }
+
+  .jump-link:hover{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transform: scale(1.1);
+  }
   
   footer a {
     float: right;
+    margin-right: 20px;
   }
   
   @media (max-height: 600px) {
@@ -63,4 +84,35 @@ body {
       flex: 1 100vh;
     }
   }
-  
+
+  .picture-box {
+  height: calc(225px + 1em);
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background: darkslategray;
+  border-radius: 5px;
+}
+
+.player-name{
+    color: gold;
+    text-align: left;
+}
+
+.layout-update{
+color: darkred;
+box-shadow: inset;
+}
+
+.layout-upload{
+ color: darkgreen;
+ box-shadow: inset;
+}
+
+.layout{
+  background-color: blue;
+  border: thick solid darkblue;
+}
+
+.layout:hover {
+  border: thick solid red;
+}
