@@ -52,4 +52,16 @@ https://www.w3schools.com/cssref/css_colors.php
 
 https://github.com/webprogramming260/.github/tree/main/profile/css
 
+### JavaScript
+
+https://github.com/webprogramming260/.github/blob/main/profile/javascript/typeConstruct/typeConstruct.md
+
+https://github.com/webprogramming260/.github/blob/main/profile/javascript/functions/functions.md
+
+https://github.com/webprogramming260/.github/blob/main/profile/javascript/arrow/arrow.md
+
+### JSON
+
+https://github.com/webprogramming260/.github/blob/main/profile/javascript/json/json.md
+
 
