@@ -32,3 +32,16 @@ For this deliverable, I built out the structure of my application using HTML.
 - **Login** - Changed login to require both username and password
 - **Database** - The layouts are represented by those stored in the database
 - **WebSocket** - The layout will be updated in realtime to any additions or updates
+
+ 
+## CSS deliverable
+
+For this deliverable, I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body**
+- **Navigation elements** - I formatted them to look more appealing and made them grow when hovered over
+- **Responsive to window resizing** - My app looks great on all window sizes and devices
+- **Application elements** - Used good contrast and whitespace
+- **Game Layout Setup** Made the buttons look less out of place and added a highlight effect to show which is being selected
+- **Application text content** - Consistent fonts and formatting changes to be more readable
+- **Application images** - Gave the image an outlined border to make it stand out
