@@ -7,6 +7,7 @@
     <title>Simon HTML</title>
     <link rel="icon" href="favicon.ico" />
 
+    <script src="login.js"></script>
     <link rel="stylesheet" href="main.css"/>
 
         <!-- Include bootstrap CSS framework -->
@@ -41,11 +42,11 @@
     <main>
       <h1>Welcome!</h1>
       <p>Login to play</p>
-      <form method="get" action="play.html">
+      <form method="get" action="play.html" onsubmit="return login();">
         <label for="name">Name</label>
         <input type="text" id="username" placeholder="Username" />
         <input type="text" id="pass" placeholder="Password" />
-        <button type="submit">Login</button>
+        <button type="submit" id="login_button">Login</button>
       </form>
     </main>
 
