@@ -45,3 +45,14 @@ For this deliverable, I properly styled the application into its final appearanc
 - **Game Layout Setup** Made the buttons look less out of place and added a highlight effect to show which is being selected
 - **Application text content** - Consistent fonts and formatting changes to be more readable
 - **Application images** - Gave the image an outlined border to make it stand out
+
+## JavaScript deliverable
+
+For this deliverable, I added functionality to my application
+
+- **Login** Allowed for users to log in and for the information to be locally stored
+- **Databases** Allowed for user layouts to be read and played against (Not fully implemented without databases) 
+- **WebSocket** Created the basis for HTML to be updated when necessary (Not fully implemented without web socket)
+- **Game Logic** Allowed for the user to play against a randomly generated layout.
+
+
