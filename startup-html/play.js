@@ -33,7 +33,15 @@ document.querySelectorAll('.layout').forEach((radioButton) => {
 
 // On page load, you can load the previously selected buttons from local storage and update the checked state
 window.addEventListener('load', () => {
-  
+  const playerNameEl = document.querySelector('.player-name');
+  if (localStorage.getItem('userName'))
+  {
+    playerNameEl.textContent = localStorage.getItem('userName');
+  }
+  else
+  {
+    playerNameEl.textContent = "Mystery Player";
+  }
   selectRandomButtons();
   localStorage.setItem('challengeButtons', JSON.stringify(selectedRadioButtons));
 
