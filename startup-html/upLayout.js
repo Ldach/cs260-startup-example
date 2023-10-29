@@ -4,10 +4,11 @@ const selectedRadioButtons = [];
 function handleRadioButtonSelection(event) {
   const radioButton = event.target;
   const radioButtonId = radioButton.id;
-
   if (radioButton.checked) {
     if (selectedRadioButtons.length < maxSelection) {
       selectedRadioButtons.push(radioButtonId);
+      radioButton.parentElement.classList.add('challenge-selected');
+
     } else {
       radioButton.checked = false;
     }
@@ -41,6 +42,7 @@ window.addEventListener('load', () => {
       const radioButton = document.getElementById(buttonId);
       if (radioButton) {
         radioButton.checked = true;
+        radioButton.parentElement.classList.add('challenge-selected');
         selectedRadioButtons.push(buttonId);
       }
     });
@@ -57,6 +59,7 @@ function clearSelections()
 {
   selectedRadioButtons.length = 0;
   document.querySelectorAll('.layout-label input:checked').forEach((radioButton) => {
+    radioButton.parentElement.classList.remove('challenge-selected');
     radioButton.checked = false;
   });
 }

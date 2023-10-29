@@ -114,14 +114,14 @@ box-shadow: inset;
 }
 
 .layout:hover, .layout.selected, .layout-label:hover {
-  border: 2px solid red;
+  border: 5px solid yellow;
 }
 
 .layout-label {
   display: inline-block;
   position: relative;
   cursor: pointer;
-  border: 2px solid darkblue;
+  border: 5px solid darkblue;
 }
 
 .layout-label input {
@@ -132,8 +132,13 @@ box-shadow: inset;
 .layout-label svg{
   height: 50px;
   width: 50px;
-  fill: blue;
 }
 .layout-label input:checked + svg{
-  border: 5px solid red;
+  border-color: red;
+}
+.challenge-selected {
+  border-color: red;
+}
+.notchallenge-selected{
+  border-color: yellow;
 }
