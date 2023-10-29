@@ -136,7 +136,7 @@ box-shadow: inset;
 .layout-label input:checked + svg{
   border-color: red;
 }
-.challenge-selected {
+.challenge-selected, .challenge-selected:hover{
   border-color: red;
 }
 .notchallenge-selected{
