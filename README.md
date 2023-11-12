@@ -55,4 +55,12 @@ For this deliverable, I added functionality to my application
 - **WebSocket** Created the basis for HTML to be updated when necessary (Not fully implemented without web socket)
 - **Game Logic** Allowed for the user to play against a randomly generated layout.
 
+## Service deliverable
+For this deliverable, I added backend endpoints that receives layouts
+
+Node.js/Express HTTP service - done!
+Static middleware for frontend - done!
+Calls to third party endpoints - calls to random quote in about section
+Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for the layouts.
+Frontend calls service endpoints - I had some trouble implementing this, so it isn't fully functional at the moment.
 
