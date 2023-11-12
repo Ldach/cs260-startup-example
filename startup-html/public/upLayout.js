@@ -70,7 +70,7 @@ async function loadLayouts() {
    try {
     // Get the latest high scores from the service
     const response = await fetch('/api/layouts');
-    scores = await response.json();
+    layouts = await response.json();
 
     // Save the scores in case we go offline in the future
     localStorage.setItem('layouts', JSON.stringify(layouts));
