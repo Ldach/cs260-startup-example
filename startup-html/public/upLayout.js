@@ -95,6 +95,7 @@ function displayLayouts(layouts) {
       const nameTdEl = document.createElement('td');
       nameTdEl.setAttribute("class", "player-name");
       const layoutTdEl = document.createElement('td');
+      layoutTdEl.setAttribute("class", "player-layout");
       const dateTdEl = document.createElement('td');
 
       positionTdEl.textContent = i + 1;

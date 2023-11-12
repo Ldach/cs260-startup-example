@@ -97,6 +97,14 @@ body {
     color: gold;
     text-align: left;
 }
+.player-layout{
+  color: maroon;
+  
+}
+
+tr td {
+    padding: 0 10px;   
+}
 
 .layout-update{
 color: darkred;
