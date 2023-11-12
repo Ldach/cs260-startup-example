@@ -36,21 +36,23 @@ app.listen(port, () => {
 
 let layouts = [];
 function updateLayouts(newLayout, layouts) {
-  let found = false;
+  let foundIndex = -1;
   for (const [i, prevLayout] of layouts.entries()) {
     if (newLayout.name === prevLayout.name) {
-      layouts.splice(i, 0, newLayout);
-      found = true;
+      foundIndex = i;
       break;
     }
   }
 
-  if (!found) {
-    layouts.push(newLayout);
+  if (foundIndex !== -1) {
+    layouts[foundIndex] = newLayout;
   }
-
-  if (layouts.length > 10) {
-    layouts.length = 10;
+  else
+  {
+    if (layouts.length > 10) {
+      layouts.shift();
+    }
+    layouts.push(newLayout);
   }
 
   return layouts;
