@@ -75,8 +75,8 @@ async function loadLayout() {
 async function saveLayout(layout) {
     const userName = localStorage.getItem("userName");
     const date = new Date().toLocaleDateString();
-    const layout = localStorage.getItem("selectedButtons");
-    const newLayout = {name: userName, layout: layout, date: date};
+    const userLayout = localStorage.getItem("selectedButtons");
+    const newLayout = {name: userName, layout: userLayout, date: date};
 
     try {
       const response = await fetch('/api/layout', {
@@ -86,10 +86,10 @@ async function saveLayout(layout) {
       });
 
       // Store what the service gave us as the high scores
-      const scores = await response.json();
-      localStorage.setItem('scores', JSON.stringify(scores));
+      const layouts = await response.json();
+      localStorage.setItem('layouts', JSON.stringify(layouts));
     } catch {
       // If there was an error then just track scores locally
-      
+
     }
   }
