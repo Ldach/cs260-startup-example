@@ -1,8 +1,6 @@
 const maxSelection = 10; 
 const selectedRadioButtons = [];
 
-app.use(express.static('public'));
-
 function handleRadioButtonSelection(event) {
   const radioButton = event.target;
   const radioButtonId = radioButton.id;
