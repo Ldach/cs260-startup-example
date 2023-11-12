@@ -93,6 +93,7 @@ function displayLayouts(layouts) {
     for (const [i, layout] of layouts.entries()) {
       const positionTdEl = document.createElement('td');
       const nameTdEl = document.createElement('td');
+      nameTdEl.setAttribute("class", "player-name");
       const layoutTdEl = document.createElement('td');
       const dateTdEl = document.createElement('td');
 
