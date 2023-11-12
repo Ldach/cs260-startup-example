@@ -29,7 +29,7 @@ buttonForm.addEventListener('submit', function (event) {
     alert('Please select exactly 10 buttons.');
   } else {
     localStorage.setItem('selectedButtons', JSON.stringify(selectedRadioButtons));
-    saveLayout();
+    saveLayout(selectedRadioButtons);
     alert('Selection Confirmed');
   }
 });
@@ -116,10 +116,10 @@ function displayLayouts(layouts) {
 
 
 
-async function saveLayout(layout) {
+async function saveLayout(layoutToSave) {
     const userName = localStorage.getItem("userName");
     const date = new Date().toLocaleDateString();
-    const userLayout = localStorage.getItem("selectedButtons");
+    const userLayout = layoutToSave
     const newLayout = {name: userName, layout: userLayout, date: date};
 
     try {
