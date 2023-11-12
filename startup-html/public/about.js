@@ -16,3 +16,4 @@ function displayQuote(data) {
         containerEl.appendChild(authorEl);
       });
   }
+  displayQuote();
