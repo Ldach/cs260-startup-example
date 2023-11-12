@@ -38,7 +38,7 @@ let layouts = [];
 function updateLayouts(newLayout, layouts) {
   let found = false;
   for (const [i, prevLayout] of layouts.entries()) {
-    if (newLayout.layout > prevLayout.layout) {
+    if (newLayout.name == prevLayout.name) {
       layouts.splice(i, 0, newLayout);
       found = true;
       break;
