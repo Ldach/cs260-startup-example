@@ -21,7 +21,7 @@ apiRouter.get('/layouts', (_req, res) => {
 
 // SubmitScore
 apiRouter.post('/layout', (req, res) => {
-  scores = updateScores(req.body, layouts);
+  layouts = updateLayouts(req.body, layouts);
   res.send(layouts);
 });
 
@@ -33,3 +33,25 @@ app.use((_req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+let layouts = [];
+function updateLayouts(newLayout, layouts) {
+  let found = false;
+  for (const [i, prevLayout] of layouts.entries()) {
+    if (newLayout.layout > prevLayout.layout) {
+      layouts.splice(i, 0, newLayout);
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    layouts.push(newLayout);
+  }
+
+  if (layouts.length > 10) {
+    layouts.length = 10;
+  }
+
+  return layouts;
+}
