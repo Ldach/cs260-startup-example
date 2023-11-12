@@ -95,14 +95,15 @@ body {
 
 .player-name{
     color: gold;
-    text-align: left;
-}
-.player-layout{
-  color: maroon;
-  
+    padding: 0 10px;   
 }
 
-tr td {
+.player-layout{
+  color: maroon;
+  padding: 0 10px;     
+}
+
+.formatted-table {
     padding: 0 10px;   
 }
 

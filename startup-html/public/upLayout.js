@@ -92,11 +92,13 @@ function displayLayouts(layouts) {
     // Update the DOM with the scores
     for (const [i, layout] of layouts.entries()) {
       const positionTdEl = document.createElement('td');
+      positionTdEl.setAttribute("class", "formatted-table");
       const nameTdEl = document.createElement('td');
       nameTdEl.setAttribute("class", "player-name");
       const layoutTdEl = document.createElement('td');
       layoutTdEl.setAttribute("class", "player-layout");
       const dateTdEl = document.createElement('td');
+      dateTdEl.setAttribute("class", "formatted-table");
 
       positionTdEl.textContent = i + 1;
       nameTdEl.textContent = layout.name;
