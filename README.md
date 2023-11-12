@@ -63,5 +63,5 @@ For this deliverable, I added backend endpoints that receives layouts
 - **Static middleware for frontend** - done!
 - **Calls to third party endpoints** - calls to random quote in about section
 - **Backend service endpoints** - Endpoints for the layouts.
-- **Frontend calls service endpoints** - I had some trouble implementing this, so it isn't fully functional at the moment.
+- **Frontend calls service endpoints** - Implemented with the fetch function
 
