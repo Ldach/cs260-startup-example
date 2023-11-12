@@ -61,7 +61,7 @@ For this deliverable, I added backend endpoints that receives layouts
 
 - **Node.js/Express HTTP service** - done!
 - **Static middleware for frontend** - done!
-- **Calls to third party endpoints** - calls to random quote in about section
+- **Calls to third party endpoints** - Calls to random quote in about section
 - **Backend service endpoints** - Endpoints for the layouts.
 - **Frontend calls service endpoints** - Implemented with the fetch function
 
