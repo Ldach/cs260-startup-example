@@ -56,6 +56,7 @@ For this deliverable, I added functionality to my application
 - **Game Logic** Allowed for the user to play against a randomly generated layout.
 
 ## Service deliverable
+
 For this deliverable, I added backend endpoints that receives layouts
 
 - **Node.js/Express HTTP service** - done!
