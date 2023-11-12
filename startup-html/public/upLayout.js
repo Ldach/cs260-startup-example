@@ -29,6 +29,7 @@ buttonForm.addEventListener('submit', function (event) {
     alert('Please select exactly 10 buttons.');
   } else {
     localStorage.setItem('selectedButtons', JSON.stringify(selectedRadioButtons));
+    saveLayout();
     alert('Selection Confirmed');
   }
 });
@@ -64,9 +65,31 @@ function clearSelections()
   });
 }
 
-async function loadScores() {
-  const response = await fetch("/api/scores")
+async function loadLayout() {
+  const response = await fetch("/api/layouts")
   const scores = await response.json()
 
   // Modify the DOM to display the scores
 }
+
+async function saveLayout(layout) {
+    const userName = localStorage.getItem("userName");
+    const date = new Date().toLocaleDateString();
+    const layout = localStorage.getItem("selectedButtons");
+    const newLayout = {name: userName, layout: layout, date: date};
+
+    try {
+      const response = await fetch('/api/layout', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(newLayout),
+      });
+
+      // Store what the service gave us as the high scores
+      const scores = await response.json();
+      localStorage.setItem('scores', JSON.stringify(scores));
+    } catch {
+      // If there was an error then just track scores locally
+      
+    }
+  }
