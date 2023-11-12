@@ -65,12 +65,56 @@ function clearSelections()
   });
 }
 
-async function loadLayout() {
-  const response = await fetch("/api/layouts")
-  const scores = await response.json()
+async function loadLayouts() {
+  let layouts = [];
+   try {
+    // Get the latest high scores from the service
+    const response = await fetch('/api/layouts');
+    scores = await response.json();
 
-  // Modify the DOM to display the scores
+    // Save the scores in case we go offline in the future
+    localStorage.setItem('layouts', JSON.stringify(layouts));
+  } catch {
+    // If there was an error then just use the last saved scores
+    const layoutText = localStorage.getItem('layouts');
+    if (layoutText) {
+      layouts = JSON.parse(layoutText);
+    }
+  }
+
+  displayLayouts(layouts);
 }
+
+function displayLayouts(layouts) {
+  const tableBodyEl = document.querySelector('#layouts');
+
+  if (layouts.length) {
+    // Update the DOM with the scores
+    for (const [i, layout] of layouts.entries()) {
+      const positionTdEl = document.createElement('td');
+      const nameTdEl = document.createElement('td');
+      const layoutTdEl = document.createElement('td');
+      const dateTdEl = document.createElement('td');
+
+      positionTdEl.textContent = i + 1;
+      nameTdEl.textContent = layout.name;
+      layoutTdEl.textContent = layout.layout;
+      dateTdEl.textContent = layout.date;
+
+      const rowEl = document.createElement('tr');
+      rowEl.appendChild(positionTdEl);
+      rowEl.appendChild(nameTdEl);
+      rowEl.appendChild(layoutTdEl);
+      rowEl.appendChild(dateTdEl);
+
+      tableBodyEl.appendChild(rowEl);
+    }
+  } else {
+    tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to provide a layout!</td></tr>';
+  }
+}
+
+
 
 async function saveLayout(layout) {
     const userName = localStorage.getItem("userName");
@@ -93,3 +137,5 @@ async function saveLayout(layout) {
 
     }
   }
+
+loadLayouts();
