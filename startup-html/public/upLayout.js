@@ -63,3 +63,10 @@ function clearSelections()
     radioButton.checked = false;
   });
 }
+
+async function loadScores() {
+  const response = await fetch("/api/scores")
+  const scores = await response.json()
+
+  // Modify the DOM to display the scores
+}
