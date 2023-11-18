@@ -15,16 +15,16 @@ const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 const DB = require('./database.js')
 
-// GetScores
-apiRouter.get('/layouts', (_req, res) => {
-  const layouts = DB.getLayouts();
+// GetLayouts
+apiRouter.get('/layouts', async (_req, res) => {
+  const layouts = await DB.getLayouts();
   res.send(layouts);
 });
 
-// SubmitScore
-apiRouter.post('/layout', (req, res) => {
+// SubmitLayout
+apiRouter.post('/layout', async (req, res) => {
   DB.addLayout(req.body);
-  const layouts = DB.getLayouts();
+  const layouts = await DB.getLayouts();
 //  layouts = updateLayouts(req.body, layouts);
   res.send(layouts);
 });
