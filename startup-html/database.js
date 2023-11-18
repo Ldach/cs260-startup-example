@@ -25,7 +25,7 @@ async function addLayout(layout)
 
 function getLayouts()
 {
-    const query = { $all };
+    const query = {};
     const options = 
     {
         limit: 10,
