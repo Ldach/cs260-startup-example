@@ -13,15 +13,19 @@ app.use(express.static('public'));
 // Router for service endpoints
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
+const DB = require('./database.js')
 
 // GetScores
 apiRouter.get('/layouts', (_req, res) => {
+  const layouts = DB.getLayouts();
   res.send(layouts);
 });
 
 // SubmitScore
 apiRouter.post('/layout', (req, res) => {
-  layouts = updateLayouts(req.body, layouts);
+  DB.addLayout(req.body);
+  const layouts = DB.getLayouts();
+//  layouts = updateLayouts(req.body, layouts);
   res.send(layouts);
 });
 
