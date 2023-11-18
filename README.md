@@ -66,3 +66,10 @@ For this deliverable, I added backend endpoints that receives layouts
 - **Frontend calls service endpoints** - Implemented with the fetch function
 - **Extra Note** The displayed layout info shows the grid values of the 10 buttons selected though a later implementation will change this to a link to play against those grid numbers instead.
 
+## DB deliverable
+
+For this deliverable I stored the layouts in the database.
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
+- **Stores data in MongoDB** - done!
