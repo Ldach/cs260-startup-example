@@ -1,7 +1,7 @@
 # cs260-README.md
 ## Startup Specification
 ### Elevator Pitch
-I am planning on making a simplified version of Battleship with people online. After creating an account or logging into a pre-existing account, the user has the option to play against a randomly generated or pre-set battleship layout or create their own layout that can be challenged by others. While the opponent's actions will always be decided by the computer, you can also choose to challenge the layout of another user.
+I am planning on making a simplified version of Battleship with people online. After creating an account or logging into a pre-existing account, the user has the option to play against a randomly generated or pre-set battleship layout or create their own layout that can be challenged by others. While the default layouts will always be decided by the computer, you can also choose to challenge the layout of another real user.
 
 ### Key Features
 **Play Battleship:** Users can play a simplified version of Battleship against a computer
@@ -64,4 +64,5 @@ For this deliverable, I added backend endpoints that receives layouts
 - **Calls to third party endpoints** - Calls to random quote in about section
 - **Backend service endpoints** - Endpoints for the layouts.
 - **Frontend calls service endpoints** - Implemented with the fetch function
+- **Extra Note** The displayed layout info shows the grid values of the 10 buttons selected though a later implementation will change this to a link to play against those grid numbers instead.
 
