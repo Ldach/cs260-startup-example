@@ -86,14 +86,15 @@ secureApiRouter.use(async (req, res, next) => {
 });
 
 // GetLayouts
-apiRouter.get('/layouts', async (_req, res) => {
+secureApiRouter.get('/layouts', async (req, res) => {
   const layouts = await DB.getLayouts();
   res.send(layouts);
 });
 
 // SubmitLayout
-apiRouter.post('/layout', async (req, res) => {
-  DB.addLayout(req.body);
+secureApiRouter.post('/layout', async (req, res) => {
+  const layout = {...req.body, ip: req.ip};
+  await DB.addLayout(layout);
   const layouts = await DB.getLayouts();
 //  layouts = updateLayouts(req.body, layouts);
   res.send(layouts);
