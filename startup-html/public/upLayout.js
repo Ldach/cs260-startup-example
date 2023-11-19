@@ -36,10 +36,6 @@ buttonForm.addEventListener('submit', function (event) {
 
 // On page load, you can load the previously selected buttons from local storage and update the checked state
 window.addEventListener('load', () => {
-  if (!username || !password) 
-  {
-      window.location.href = "login.html";
-  }
   const storedSelectedButtons = localStorage.getItem('selectedButtons');
   if (storedSelectedButtons) {
     const selectedButtonsArray = JSON.parse(storedSelectedButtons);
