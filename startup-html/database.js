@@ -8,7 +8,7 @@ const client = new MongoClient(url);
 const db = client.db('warships');
 const collection = db.collection('layout');
 
-// Test that you can connect to the database
+// Test that you can connect to the database 
 (async function testConnection() {
 await client.connect();
 await db.command({ ping: 1 });
