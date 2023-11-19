@@ -74,7 +74,7 @@ For this deliverable I stored the layouts in the database.
 - **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
 - **Stores data in MongoDB** - done!
 
-- ## Login deliverable
+## Login deliverable
 
 For this deliverable I associate the layouts with the logged in user.
 
