@@ -73,7 +73,7 @@ async function loadLayouts() {
     layouts = await response.json();
 
     // Save the scores in case we go offline in the future
-    localStorage.setItem('layouts', JSON.stringify(layouts));
+    //localStorage.setItem('layouts', JSON.stringify(layouts));
   } catch {
     // If there was an error then just use the last saved scores
     const layoutText = localStorage.getItem('layouts');
@@ -102,8 +102,20 @@ function displayLayouts(layouts) {
 
       positionTdEl.textContent = i + 1;
       nameTdEl.textContent = layout.name;
-      layoutTdEl.textContent = layout.layout;
+      //layoutTdEl.textContent = layout.layout;
       dateTdEl.textContent = layout.date;
+
+      const challengeLink = document.createElement('a');
+      challengeLink.setAttribute('href', 'play.html');
+      challengeLink.textContent = 'Challenge!';
+
+      challengeLink.addEventListener('click', function () {
+        localStorage.setItem('userChallenge', JSON.stringify(layout.layout));
+        localStorage.setItem('vsUser', JSON.stringify(layout.name));
+      });
+
+      layoutTdEl.appendChild(challengeLink);
+
 
       const rowEl = document.createElement('tr');
       rowEl.appendChild(positionTdEl);
@@ -135,7 +147,7 @@ async function saveLayout(layoutToSave) {
 
       // Store what the service gave us as the high scores
       const layouts = await response.json();
-      localStorage.setItem('layouts', JSON.stringify(layouts));
+      //localStorage.setItem('layouts', JSON.stringify(layouts));
     } catch {
       // If there was an error then just track scores locally
 
