@@ -107,6 +107,7 @@ function displayLayouts(layouts) {
 
       const challengeLink = document.createElement('a');
       challengeLink.setAttribute('href', 'play.html');
+      challengeLink.setAttribute("class", "challenge-link");
       challengeLink.textContent = 'Challenge!';
 
       challengeLink.addEventListener('click', function () {

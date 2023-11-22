@@ -151,3 +151,16 @@ box-shadow: inset;
 .notchallenge-selected{
   border-color: yellow;
 }
+.player-event {
+  color: rgb(165, 220, 235);
+}
+
+.system-event {
+  color: rgb(221, 148, 40);
+}
+
+.challenge-link{
+  color: goldenrod;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}
