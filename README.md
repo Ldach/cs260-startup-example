@@ -73,3 +73,12 @@ For this deliverable I stored the layouts in the database.
 - **MongoDB Atlas database created** - done!
 - **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
 - **Stores data in MongoDB** - done!
+
+## Login deliverable
+
+For this deliverable I associate the layouts with the logged in user.
+
+- **User registration** - Creates a new account in the database.
+- **existing user** - Able to correctly log in and update their layout
+- **Use MongoDB to store credentials** - Stores both user and their layout
+- **Restricts functionality** - You cannot access the game or upload layouts without logging in. This is only a frontend restriction, so a user can still indirectly navigate to play.html to play the game, but the other layouts will not load and any layout they attempt to save will not be stored in the database.
