@@ -62,13 +62,16 @@ document.querySelectorAll('.layout').forEach((radioButton) => {
   radioButton.addEventListener('change', handleRadioButtonSelection);
 });
 
-if (isChallenge)
+function broadCast(player, vs, isRegularGame)
 {
-  broadcastEvent(playerName, ChallengeStartEvent, vsUser);
-}
-else
-{
-  broadcastEvent(playerName, GameStartEvent, {});
+  if (!isRegularGame)
+  {
+    broadcastEvent(player, ChallengeStartEvent, vs);
+  }
+  else
+  {
+    broadcastEvent(player, GameStartEvent, {});
+  }
 }
 
 // On page load, you can load the previously selected buttons from local storage and update the checked state
@@ -100,13 +103,13 @@ window.addEventListener('load', () => {
     localStorage.setItem('challengeButtons', JSON.stringify(userChallenge));
     localStorage.removeItem('userChallenge');
     localStorage.removeItem('vsUser');
-    isChallenge = true;
+    broadCast(playerName, vsUser, false);
   }
   else
   {
     selectRandomButtons();
     localStorage.setItem('challengeButtons', JSON.stringify(selectedRadioButtons));
-    isChallenge = false;
+    broadCast(playerName, vsUser, true);    
   }
 
   if (localStorage.getItem('challengeButtons'))
@@ -176,18 +179,18 @@ function broadcastEvent(from, type, value) {
     type: type,
     value: value,
   };
- // socket.send(JSON.stringify(event));
- console.log(`{"from":"${from}", "type":"${type}","value":"${value}"}`);
+  //socket.send(JSON.stringify(event));
 
-/*
+  console.log("broadcasting");
  if (socket.readyState === WebSocket.OPEN)
  {
-    this.socket.send(`{"from":"${from}", "type":"${type}","value":"${value}"}`);
+    console.log(`{"from":"${from}", "type":"${type}","value":"${value}"}`);
+    socket.send(`{"from":"${from}", "type":"${type}","value":"${value}"}`);
  }
  else
  {
-    setTimeout(() => { broadcastEvent(from,type,value) }, 1000)
+  console.log("TIMEOUT");
+  setTimeout(() => { broadcastEvent(from,type,value) }, 1000)
  }
- */
 
 }
