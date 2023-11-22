@@ -1,24 +1,31 @@
-const maxSelection = 10; 
-const selectedRadioButtons = [];
-var challengeButtons = [];
 const ChallengeStartEvent = 'challengeStart';
 const GameStartEvent = 'gameStart';
 
+const maxSelection = 10; 
+const selectedRadioButtons = [];
+var challengeButtons = [];
+var isChallenge = false;
+var playerName = "";
+var vsUser = "";
+
 const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
 const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
 socket.onopen = (event) => {
   displayMsg('system', 'game', 'connected');
 };
+
 socket.onclose = (event) => {
   displayMsg('system', 'game', 'disconnected');
 };
+
 socket.onmessage = async (event) => {
   const msg = JSON.parse(await event.data.text());
   if (msg.type === ChallengeStartEvent) {
     displayMsg('player', msg.from, `is challenging ${msg.value}`);
   } else if (msg.type === GameStartEvent) {
     displayMsg('player', msg.from, `started a new game`);
-  }
+}
 };
 
 
@@ -55,6 +62,15 @@ document.querySelectorAll('.layout').forEach((radioButton) => {
   radioButton.addEventListener('change', handleRadioButtonSelection);
 });
 
+if (isChallenge)
+{
+  broadcastEvent(playerName, ChallengeStartEvent, vsUser);
+}
+else
+{
+  broadcastEvent(playerName, GameStartEvent, {});
+}
+
 // On page load, you can load the previously selected buttons from local storage and update the checked state
 window.addEventListener('load', () => {
 
@@ -66,7 +82,6 @@ window.addEventListener('load', () => {
   }
 
 
-  var playerName;
   if (localStorage.getItem('userName'))
   {
     playerName = localStorage.getItem('userName');
@@ -81,17 +96,17 @@ window.addEventListener('load', () => {
   if (localStorage.getItem('userChallenge'))
   {
     const userChallenge = JSON.parse(localStorage.getItem('userChallenge'));
-    const vsUser = JSON.parse(localStorage.getItem('vsUser'));
+    vsUser = JSON.parse(localStorage.getItem('vsUser'));
     localStorage.setItem('challengeButtons', JSON.stringify(userChallenge));
     localStorage.removeItem('userChallenge');
     localStorage.removeItem('vsUser');
-    broadcastEvent(playerName, ChallengeStartEvent, vsUser);
+    isChallenge = true;
   }
   else
   {
     selectRandomButtons();
     localStorage.setItem('challengeButtons', JSON.stringify(selectedRadioButtons));
-    broadcastEvent(playerName, GameStartEvent, {});
+    isChallenge = false;
   }
 
   if (localStorage.getItem('challengeButtons'))
@@ -144,6 +159,8 @@ function clearSelections()
 }
 
 
+
+
 function displayMsg(cls, from, msg) {
   const chatText = document.querySelector('#player-messages');
   chatText.innerHTML =
@@ -157,13 +174,17 @@ function broadcastEvent(from, type, value) {
     value: value,
   };
  // socket.send(JSON.stringify(event));
+ console.log(`{"from":"${from}", "type":"${type}","value":"${value}"}`);
+
+/*
  if (socket.readyState === WebSocket.OPEN)
  {
-    socket.send(`{"from":"${from}", "type":"${type}","value":"${value}"}`);
+    this.socket.send(`{"from":"${from}", "type":"${type}","value":"${value}"}`);
  }
  else
  {
     setTimeout(() => { broadcastEvent(from,type,value) }, 1000)
  }
+ */
 
 }
