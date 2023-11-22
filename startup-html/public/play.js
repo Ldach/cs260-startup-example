@@ -162,6 +162,9 @@ function clearSelections()
 
 
 function displayMsg(cls, from, msg) {
+  
+  console.log("displaying message");
+
   const chatText = document.querySelector('#player-messages');
   chatText.innerHTML =
     `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
