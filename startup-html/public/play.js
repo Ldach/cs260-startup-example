@@ -62,17 +62,6 @@ document.querySelectorAll('.layout').forEach((radioButton) => {
   radioButton.addEventListener('change', handleRadioButtonSelection);
 });
 
-function broadCast(player, vs, isRegularGame)
-{
-  if (!isRegularGame)
-  {
-    broadcastEvent(player, ChallengeStartEvent, vs);
-  }
-  else
-  {
-    broadcastEvent(player, GameStartEvent, {});
-  }
-}
 
 // On page load, you can load the previously selected buttons from local storage and update the checked state
 window.addEventListener('load', () => {
@@ -103,13 +92,13 @@ window.addEventListener('load', () => {
     localStorage.setItem('challengeButtons', JSON.stringify(userChallenge));
     localStorage.removeItem('userChallenge');
     localStorage.removeItem('vsUser');
-    broadCast(playerName, vsUser, false);
+    broadcastEvent(playerName, ChallengeStartEvent, vsUser);
   }
   else
   {
     selectRandomButtons();
     localStorage.setItem('challengeButtons', JSON.stringify(selectedRadioButtons));
-    broadCast(playerName, vsUser, true);    
+    broadcastEvent(playerName, GameStartEvent, {}); 
   }
 
   if (localStorage.getItem('challengeButtons'))
