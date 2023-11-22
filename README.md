@@ -57,7 +57,7 @@ For this deliverable, I added functionality to my application
 
 ## Service deliverable
 
-For this deliverable, I added backend endpoints that receives layouts
+For this deliverable, I added backend endpoints that receive layouts
 
 - **Node.js/Express HTTP service** - done!
 - **Static middleware for frontend** - done!
@@ -68,17 +68,26 @@ For this deliverable, I added backend endpoints that receives layouts
 
 ## DB deliverable
 
-For this deliverable I stored the layouts in the database.
+For this deliverable, I stored the layouts in the database.
 
 - **MongoDB Atlas database created** - done!
-- **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
+- **Endpoints for data** - My stubbed-out endpoints now process the data and send it to Mongo.
 - **Stores data in MongoDB** - done!
 
 ## Login deliverable
 
-For this deliverable I associate the layouts with the logged in user.
+For this deliverable, I associate the layouts with the logged-in user.
 
 - **User registration** - Creates a new account in the database.
 - **existing user** - Able to correctly log in and update their layout
 - **Use MongoDB to store credentials** - Stores both user and their layout
 - **Restricts functionality** - You cannot access the game or upload layouts without logging in. This is only a frontend restriction, so a user can still indirectly navigate to play.html to play the game, but the other layouts will not load and any layout they attempt to save will not be stored in the database.
+
+## WebSocket deliverable
+
+For this deliverable, I used webSocket to notify users of new games and challenges on the frontend in realtime.
+
+- **Backend listens for WebSocket connection** - done!
+- **Frontend makes WebSocket connection** - done!
+- **Data sent over WebSocket connection** - done!
+- **WebSocket data displayed** - Whenever a new user starts a game or challenges a layout, all other users are notified
