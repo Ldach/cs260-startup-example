@@ -11,7 +11,7 @@ import { About } from './about/about';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <div className='body bg-dark text-light'><!-- sub-elements here --></div>
+    <div className='body bg-dark text-light'></div>
   </BrowserRouter>
 );
 
