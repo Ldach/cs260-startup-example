@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon</title>
+    <link rel="icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="main.css"/>
+
+        <!-- Include bootstrap CSS framework -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"/>  
+
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1 id="headername">War Ships!</h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li class="jump-link"><a href="index.html">Home</a></li>
+          <li class="jump-link"><a href="play.html">Play</a></li>
+          <li class="jump-link"><a href="upLayout.html">Upload/Choose Layout</a></li>  
+          <li class="jump-link"><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <div class="players">
+        Player:
+        <span class="player-name"></span>
+        <div id="player-messages"></div>
+      </div>
+      <!--
+      <ul class="notification">
+        <li class="layout-upload">Tim uploaded a new layout</li>
+        <li class="layout-upload">Ada uploaded a new layout</li>
+        <li class="layout-update">Tim updated their layout</li>
+      </ul>
+    -->
+
+      <div>
+        <button id = "reset-button">New Layout</button>
+      </div>
+
+      <br />
+      <form id="button-form">
+        <div>
+          <table>
+            <tr>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="A1" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="A2" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="A3" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="A4" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="A5" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="B1" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="B2" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="B3" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="B4" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="B5" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="C1" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="C2" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="C3" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="C4" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="C5" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="D1" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="D2" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="D3" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="D4" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="D5" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="E1" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="E2" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="E3" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="E4" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="E5" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="F1" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="F2" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="F3" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="F4" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+              <td>
+                <label class="layout-label">
+                  <input type="radio" class="layout" id="F5" >
+                  <svg aria-hidden="true" viewBox="0 0 50 50" height="50" width="50">
+                    <path d="M 50,0 50,50 0,50 0,0 50,0" fill="blue"  />
+                  </svg>
+                </label>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </form>
+      <script src="play.js"></script>
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Luke Dachenhausen</span>
+      <br />
+      <a href="https://github.com/Ldach/cs260-startup-example/tree/main">GitHub</a>
+    </footer>
+  </body>
+</html>
