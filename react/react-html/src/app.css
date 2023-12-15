@@ -15,9 +15,7 @@ body {
 
   #headername{
     margin-left: 40px;
-  }
-
-  
+  } 
 
   main {
     flex: 1 calc(100vh - 110px);
