@@ -91,3 +91,14 @@ For this deliverable, I used webSocket to notify users of new games and challeng
 - **Frontend makes WebSocket connection** - done!
 - **Data sent over WebSocket connection** - done!
 - **WebSocket data displayed** - Whenever a new user starts a game or challenges a layout, all other users are notified
+
+## React deliverable
+
+For this deliverable, I converted the application over to use React. I was unable to get the application to correctly deploy, though I was able to implement many if not all of the required technologies.
+
+- **Bundled and transpiled** - done!
+- **Components** - Login, uploading layouts, and play were all translated into JSX react components
+- **Router** - Routing between login and voting components.
+- **Hooks** - I had trouble getting Hooks fully implemented, but was able to make progress in my test environment
+
+
